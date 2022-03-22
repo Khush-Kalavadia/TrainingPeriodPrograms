@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            My Page
+        </title>
+
+        <!--internal CSS-->
+        <!--text is class name-->
+        <!--myDiv is id name-->
+        <!--body, h1, p are the tags to which the properties would be applied-->
+        <style>         
+            .text{      
+                color: darkorange;
+            }
+
+            #myDiv{
+                font-weight: bold;
+            }
+
+            body {background-color:beige;}
+            h1   {color: blue;}
+            p    {color: red;}
+
+        </style>
+        
+        <!--It is external CSS. The rel attribute defines the relationship between a linked resource and the current document.
+        myStyle.css is in the same folder-->
+        <link rel="stylesheet" href="myStyle.css">
+
+        <!--another way of using external CSS-->
+        <!-- <link rel="stylesheet" href="https://www.w3schools.com/html/styles.css"> -->
+
+    </head>
+    <body>
+        <!--this is inline CSS because of the setting style-->
+        <h1 id = "start" style="background: darkseagreen; color: rgb(161, 0, 182);">
+            Inline CSS properties are applied over internal CSS. 
+        </h1>
+        
+        <!--relative URL. No '/' in beginning means it is in same folder-->
+        <img src="motadata_logo.png" alt="Motadata" width="220" height="120">
+
+        <br>
+
+        <!--absolute URL. Target set to open in new webpage-->
+        <a href="https://www.motadata.com/" target="_blank" title="Hovering text" alt="Text when not loaded">            
+            Click here to open Motadata Website
+        </a>
+        
+        <br>
+
+        <!--this is also relative but ../ means it is one folder outside the current folder-->
+        <a href="https://www.motadata.com/" target="_blank">            
+            <img src="../motadata_logo2.png" alt="Motadata2" width="100" height="50">
+        </a>
+        
+        <br>
+
+        <!--this would be from the root folder-->
+        <img src="/home/khush/VSCodeProjects/motadata_logo2.png" style="float: right;" alt="Motadata2">
+
+        <br><br><br><br><br><br><br>
+
+        <h2 id="message">
+            Hello world 
+        </h2>
+
+        <h3>
+            H3 using the external CSS from the file myStyle.css.
+        </h3>
+
+        <p>
+            This is a paragraph which is using CSS colour provided in internal CSS. 
+        </p>
+
+        <!--center using external CSS. Scroll and check effect-->
+        <!-- <button id="myButton" onclick="document.location='motadata_logo.png'">Page done</button> -->
+        <button id="myButton" onclick="displayResult()">Click here</button>
+
+        <table border="2">
+            <tr>
+                <th>Heading1</th>
+                <th>Heading2</th>
+            </tr>
+            <tr>
+                <td>Content1</td>
+                <td>Content2</td>
+            </tr>
+            <tr>
+                <td>Content3</td>
+                <td>Content4</td>
+            </tr>
+        </table>
+
+        <p>Class name i.e. text specific properties applied.</p>
+        <div class="text">This includes normal text with class name text</div> 
+        <div class="text1">This includes normal text with class name text1</div> 
+        <p>This is a paragraph having the id as myDiv</p>        
+        <div class="text" id="myDiv">This includes normal text with class name text and id myDiv</div> 
+        <div>It is a div having span being used inside it to <span> change font.</span></div>
+
+        <hr>
+
+        <div id="division">
+            <div id="wrapper">
+
+                <h2>It is a h2 tag.</h4>
+                <span>It is a span after the h2 tag.</span>
+                <p class="newClass">This is a paragraph having a class.</p>
+
+                <br><br>
+
+                Click on the animals
+                <ol>
+                    <!--if we don't pass parameter to the method then it does not give an error-->
+                    <li onclick="showDetails(this)" id="owl" data-animal="bird">Owl</li>
+                    <li onclick="showDetails(this)" id="salmon" data-animal="fish">Salmon</li> 
+                    <li onclick="showDetails(this)" id="tarantula" data-animal="spider">Tarantula</li>  
+                </ol>
+
+                <br>
+
+                Radio buttons
+                <form>
+                    <!--for in label sets the linkage wth the input radio button-->
+                    <input type="radio" id="html" name="fav_language" value="HTML">
+                    <label for="html">HTML</label><br>
+
+                    <input type="radio" id="css" name="fav_language" value="CSS">
+                    <label for="css">CSS</label><br>
+                    
+                    <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                    <label for="javascript">JavaScript</label><br>
+                    
+                    <input type="radio" id="node" name="fav_language" value="Node">
+                    <label for="node">Node</label><br>
+                    
+                    <input type="radio" id="react" name="fav_language" value="React">
+                    <label for="react">React</label><br>
+                    
+                    <br>
+
+                    <input type="checkbox" id="java" name="other_language" value="java" checked>
+                    <label for="java">Java</label><br>
+                    
+                    <input type="checkbox" id="python" name="other_language" value="python">
+                    <label for="python">Python</label>
+                    <br><br>
+
+                    Select state to get city:
+                    <select id="state" name="state">
+                        <option value="none" selected>select</option>
+                        <option value="gujarat">Gujarat</option>
+                        <option value="rajasthan">Rajasthan</option>
+                        <option value="maharastra">Maharastra</option>
+                    </select>               
+
+                    <br><br>
+                    <input id = "submitButton" type="submit" formaction="motadata_logo.png" value="Submit - view image">
+                </form> 
+            </div>
+        </div>
+
+        <br><br>
+
+        <div id="overflowTrial">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+        
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>   
+
+        <a href="#start">Jump to Top</a>
+
+        <script src="../jquery-3.6.0.js"></script>
+
+        <script>
+            function displayResult() 
+            {
+              document.getElementById("message").innerHTML = "Have a nice day!";
+            }
+
+            function showDetails(object) 
+            {
+            var objectType = object.getAttribute("data-animal");
+            alert("The " + object.innerHTML + " is a " + objectType + ".");
+            }
+
+            function selectState(event){
+                $(".city").hide();
+
+                var states = ["gujarat", "rajasthan", "maharastra"];
+                var cities;
+
+                //this returns a function so we need to convert it to string
+                var selectedState = event.currentTarget.value.toString();
+
+                 switch(selectedState){
+                    case states[0]:
+                        cities=["bharuch", "vadodara", "surat"];
+                        break;
+
+                    case states[1]:
+                        cities=["jodhpur", "jaipur"];
+                        break;
+
+                    case states[2]:
+                        cities=["mumbai", "pune"];
+                        break;
+                }
+
+                var myText="";
+
+                myText = myText.concat('<select name="', selectedState, '" id="', selectedState, '" class="city">');
+
+                for(let index=0; index < cities.length; index++){
+                    myText = myText.concat('<option value="', cities[index], '">', cities[index], '</option>');   
+                }
+                myText = myText.concat('</select>');
+                
+                console.log(myText);
+
+                $("#state").after(myText);
+
+            }
+
+            $("document").ready(function(event){
+                $("#state").on("change", selectState);
+                
+            });
+        </script>
+
+    </body>
+</html>

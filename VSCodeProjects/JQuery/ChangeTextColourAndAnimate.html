@@ -1,0 +1,47 @@
+<!-- Program 2: Changing colour of all p tags and animate -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../jquery-3.6.0.js"></script>
+
+    <style>
+      .box {
+        background-color: brown;
+        width: 50px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>All paragraphs turing red when document is ready</p>
+    <p id="content">Sample text</p>
+    <hr />
+    <input type="button" value="Click here" />
+    <div class="box"></div>
+
+    <script>
+      function changeColour() {
+        alert("See text colour");
+        //everything is kept in double inverted comma in such case
+        $("p").css("color", "red");
+      }
+
+      function buttonClick() {
+        //animate at same time
+        // $(".box").animate({ height: "+=100px", width: "+=100px" });
+
+        //animate one by one
+        $(".box").animate({ height: "+=100px" }).animate({ width: "+=100px" });
+      }
+
+      //shorthand of calling $(document).ready(changeColour) can be used
+      //in case we are calling one function -> $(changeColour)
+
+      $("document").ready(function () {
+        changeColour();
+        $('input[type="button"]').on("click", buttonClick);
+      });
+    </script>
+  </body>
+</html>

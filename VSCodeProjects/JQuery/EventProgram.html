@@ -1,0 +1,72 @@
+<!-- Program 6: Trying out different events -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event program</title>
+    <script src="../jquery-3.6.0.js"></script>
+    <style>
+      .begin p {
+        padding: 20px;
+        font: 20px sans-serif;
+        background: khaki;
+      }
+      p.highlight {
+        background: yellow;
+      }
+      span {
+        background-color: orange;
+      }
+    </style>
+    <script>
+      $("document").ready(function () {
+        $(".begin p").click(function () {
+          $(this).slideUp(); //this does not include "" else it would consider it as name of a tag
+        });
+
+        $(".hover p").hover(
+          function () {
+            $(this).addClass("highlight");
+          },
+          function () {
+            $(this).removeClass("highlight");
+          }
+        );
+
+        $("select").change(function () {
+          //change function is used in select
+          var selectedOption = $(this).find(":selected").val();
+          alert("You have selected " + selectedOption);
+        });
+
+        $('input[type="button"]').click(function () {
+          $(".begin p").slideToggle("slow");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="begin">
+      <p>Click on me and I'll disappear.</p>
+      <p>Click on me and I'll disappear.</p>
+      <p>Click on me and I'll disappear.</p>
+      <input type="button" value="Click here to toggle" id="toggle" />
+    </div>
+    <hr />
+    <div class="hover">
+      <p class="highlight">Place mouse pointer on me.</p>
+      <p>Place mouse pointer on me.</p>
+      <p>Place mouse pointer on me.</p>
+    </div>
+    <hr />
+    <div class="select">
+      Select city:
+      <select name="city" id="city">
+        <option value="bharuch">GJ 16</option>
+        <option value="vadodara">GJ 6</option>
+        <option value="ahmedabad">GJ 1</option>
+      </select>
+    </div>
+    <hr />
+  </body>
+</html>

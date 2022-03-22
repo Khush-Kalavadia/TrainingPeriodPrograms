@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    Hello world.
+    <ul>
+      <li>a</li>
+      <li>b</li>
+      <ul>
+        <li>c</li>
+        <li>d</li>
+      </ul>
+      <li>e</li>
+    </ul>
+
+    <div id="hideDiv">
+      abc
+      <p id="onclick">Click here</p>
+    </div>
+  </body>
+  <script src="../jquery-3.6.0.js"></script>
+  <style>
+    .colorAqua {
+      color: aqua;
+    }
+
+    .coloryellow {
+      background-color: yellow;
+    }
+  </style>
+
+  <script>
+    function myFunction() {
+      console.log($("ul li"));
+      console.log($("ul li").toString());
+      console.log($("ul li")[0]);
+      console.log($("ul li")[0].toString());
+      console.log(typeof $("ul li")[0].innerHTML);
+      console.log($("ul li")[0].innerHTML.toString());
+    }
+
+    function onClickHandlerDiv() {
+      $("#hideDiv").on("click", function () {
+        $("#onclick").toggleClass("colorAqua");
+        alert("onClickHandlerDiv called");
+      });
+    }
+
+    function onClickHandlerPara() {
+      $("#onclick").on("click", function () {
+        $("#onclick").toggleClass("coloryellow");
+        alert("onClickHandlerPara called");
+      });
+    }
+
+    $("document").ready(function () {
+      myFunction();
+      onClickHandlerDiv();
+      onClickHandlerPara();
+    });
+  </script>
+</html>

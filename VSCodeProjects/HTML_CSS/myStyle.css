@@ -1,0 +1,110 @@
+h3
+{
+    color:darkgreen;
+}
+
+#myButton
+{
+  /* fixed positioning. Other types are relative and absolute  */
+    position: fixed;
+    left: 50%;
+    bottom: 2%;
+}
+
+#myButton:hover{
+  transform: scale(2);
+}
+
+a:link {
+    background-color: orchid;
+    text-decoration:dashed;
+}
+
+/* text which appears when we hover on the link */
+a:hover {       
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+/* two tags passed together */  
+  th, td {
+    padding: 15px;
+  }
+
+  div span{
+    font-family:'Courier New', Courier, monospace;
+  }
+
+  /* span present after h2 tag */
+h2 + span{
+  background-color: black;
+  color: yellow;
+}
+
+p[class]{
+  color: palevioletred;
+  text-transform: uppercase;
+}
+
+#submitButton{
+  /* clockwise starting from the "top" */
+  padding: 20px 10px 20px 10px;
+  /* 2 at top and bottom and 20 on left and right. Auto margins the element at center within its container   */
+  margin: 2px 20px;
+}
+
+#tarantula{
+  /* Specifies the height of a line. Relative to the font-size of the element 
+  (2em means 2 times the size of the current font) */
+  line-height: 2em;
+}
+
+#message{
+  font-family:monospace; 
+
+  text-align: center; 
+  /* setting width of the element to 70% of whole screen horzontal width */
+  width: 70%;
+  /* margin auto sets the message element at center of the screen */
+  margin: auto;         
+  
+  border:2px solid red; 
+  /* this gives curvature to the corner */
+  border-radius: 10px;
+}
+
+#overflowTrial{
+  width: 400px;
+  height: 200px;
+  margin: auto;
+  /* adding scrolling functionality to a div */
+  overflow: scroll;
+
+  word-spacing: 10px;
+}
+
+#division{
+  background: coral;
+  padding: 10px;
+}
+
+#wrapper{
+  width: 60%;
+  background-color: white;
+  margin: auto;
+  padding-left: 5%;
+  box-shadow: 5px 5px 20px grey;
+}
+
+ol{
+  list-style-type: lower-roman;
+}
+
+h3+p:after{
+  content: "--------";
+}
+
+form>label:nth-child(2n){
+  background-color: #dfdfdf;
+}

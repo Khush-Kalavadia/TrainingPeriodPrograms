@@ -1,0 +1,29 @@
+<!-- Program 8: Will help understand the usage of this, event and fetching value. 
+Running a process once only and adding variable to the current context.
+Binding event on the parent div. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My trial page</title>
+  </head>
+  <body>
+    <div id="main">
+      <input type="button" value="abc" />
+      <input type="button" value="def" />
+
+      <input type="text" id="myText" />
+      <hr />
+      <input type="button" id="newButton" value="Add new button" />
+      <p>Create new button and try to get alert.</p>
+    </div>
+    <script src="../jquery-3.6.0.js"></script>
+    <script src="AccessingValue.js"></script>
+    <script>
+      $("document").ready(function () {
+        Trial.buttonClick();
+        Trial.newButtonClick();
+      });
+    </script>
+  </body>
+</html>

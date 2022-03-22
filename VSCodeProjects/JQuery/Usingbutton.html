@@ -1,0 +1,41 @@
+<!-- Program 3: Using buttons to change and highlight text  -->
+<!-- IMP: Selecting on the basis of element, id, class and attribute -->
+<!-- element: button || class: .className || id: #myText || attribute: 'input[type="text"]' -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../jquery-3.6.0.js"></script>
+    <script>
+      $("document").ready(function () {
+        $("#left").click(function () {
+          $("p").text("This is demo text");
+        });
+
+        $("#middle").click(function () {
+          $("#firstPara").text("This is another demo text");
+        });
+
+        $("#right").click(function () {
+          $("p.empty").text("New demo text");
+        });
+
+        $("#highlight").click(function () {
+          $("p").css("background", "yellow");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <button id="left">Set All paragraph's text</button>
+      <button id="middle">Set first paragraph's text</button>
+      <button id="right">Set empty paragraph's text</button>
+      <br />
+      <button id="highlight">Highlight</button>
+      <p id="firstPara">Sample text</p>
+      <p id="secondPara">Sample text</p>
+      <p class="empty"></p>
+    </div>
+  </body>
+</html>

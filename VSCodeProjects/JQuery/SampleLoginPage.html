@@ -1,0 +1,116 @@
+<!-- Program 4: Login page and using selecting on basis of attribute value. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../jquery-3.6.0.js"></script>
+    <style>
+      label span {
+        display: none;
+        /* if we don't keep position as fixed then the label and input both will move */
+        position: fixed;
+      }
+    </style>
+    <script>
+      $("document").ready(function () {
+        $("#background").css({
+          "background-color": "darkblue",
+        });
+
+        $("div div").css({
+          width: "30%",
+          height: "230px",
+          margin: "20px auto",
+          padding: "30px",
+          "background-color": "white",
+          "text-align": "center",
+        });
+
+        $("#content").css({
+          width: "70%",
+          "text-align": "center",
+          height: "320px",
+        }); //this comes below so 70% width is applied
+
+        $('input[type="text"]').css("background", "rgb(230, 228, 250)");
+
+        $("form :password").css("background", "lightgreen"); //need to give space before :
+
+        $("*").css("padding", "5px");
+
+        $("tr:odd").css("background-color", "orange"); //never give space between tr and odd
+
+        $("p:first").css("background-color", "red");
+
+        $("p:eq(2)").css("background-color", "green"); //third paragraph
+
+        $("p:last").css("background-color", "pink");
+
+        $("form").submit(function () {
+          var regex = /^[a-zA-Z]+$/; //equivalent to -> new RegExp("^[a-zA-Z]+$")
+          var currentValue = $("#username").val();
+          if (regex.test(currentValue) == false) {
+            $("#result").html("Not valid!").show().fadeOut(1000);
+            event.preventDefault();
+          }
+        });
+
+        $("#result").css("height", "1em");
+
+        $("input").focus(function () {
+          $(this).next("span").show().fadeOut("slow");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="background">
+      <div id="login">
+        <form id="login" action="https://motadata.com" method="post">
+          <h1>Login Window</h1>
+          <label for="username"
+            >Username:<input type="text" name="username" id="username" /><span
+              >Focus</span
+            ></label
+          >
+          <br />
+          <label for="password"
+            >Password:
+            <input type="password" name="password" id="password" />
+            <span>Focus</span></label
+          >
+          <br />
+          <label>
+            <input type="submit" value="Sign in" />
+            <span>Focus</span>
+            <div id="result"></div
+          ></label>
+        </form>
+      </div>
+      <div id="content">
+        <table border="2px" align="center">
+          <tr>
+            <th>Username</th>
+            <th>Password</th>
+          </tr>
+          <tr>
+            <td>User1</td>
+            <td>Password1</td>
+          </tr>
+          <tr>
+            <td>User2</td>
+            <td>Password2</td>
+          </tr>
+          <tr>
+            <td>User3</td>
+            <td>Password3</td>
+          </tr>
+        </table>
+        <p>This is a paragraph.</p>
+        <p>This is another paragraph.</p>
+        <p>This is one more paragraph.</p>
+        <p>This is one more paragraph.</p>
+      </div>
+    </div>
+  </body>
+</html>

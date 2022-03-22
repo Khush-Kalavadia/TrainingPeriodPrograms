@@ -1,0 +1,29 @@
+<!-- Program 9: Understanding usage of chaining and ways of inserting(append, html, after, before)
+content as it happens in a one page application. -->
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="main">
+      This is inside main div
+      <div id="content">This is content div</div>
+      <input type="button" id="mainButton" value="Insert in content div" />
+    </div>
+
+    <script src="../jquery-3.6.0.js"></script>
+    <script src="ReplaceMain.js"></script>
+    <style>
+      div {
+        border: 2px solid black;
+        background-color: cornflowerblue;
+        padding: 10px 10px 10px 20px;
+      }
+    </style>
+    <script>
+      $("document").ready(function () {
+        console.log("started");
+        ReplaceMain.onClick();
+      });
+    </script>
+  </body>
+</html>
