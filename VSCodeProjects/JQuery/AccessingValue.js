@@ -4,16 +4,16 @@ let Trial = {
       //here, is the list of ways how we can access the value and properties
       //we get a this which is the complete object and now we can extract any property out of it
 
-      $("input[type='text']").val(this.value);
+      $("input[type='text']").val($(event.target).val());
 
-      //   alert(this.value);
-      //   alert(this.localName);
-      //   alert($(this).attr("value"));
-      //   alert($(this).val());
-      //   alert(event.currentTarget.value);
-      //   alert(event.currentTarget.localName);
-      //   alert($("input[type='button']").attr("value"));
-      //   alert($("input[type='button']").val());
+      console.log(this.value);
+      console.log(this.localName);
+      console.log($(this).attr("value"));
+      console.log($(this).val());
+      console.log(event.currentTarget.value);
+      console.log(event.currentTarget.localName);
+      console.log($("input[type='button']").attr("value"));
+      console.log($("input[type='button']").val());
     });
   },
 

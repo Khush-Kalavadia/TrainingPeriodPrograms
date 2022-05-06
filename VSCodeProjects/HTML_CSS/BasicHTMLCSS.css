@@ -1,0 +1,25 @@
+table {
+  background-color: blue;
+
+  padding: 10px;
+  border: 5px solid red;
+  margin: 10px;
+}
+td,
+th,
+tr {
+  border: 1px solid black;
+}
+#myTd {
+  color: yellow;
+}
+.myClass {
+  text-align: center;
+  background-color: aqua;
+}
+span {
+  background-color: blueviolet;
+}
+#content {
+  color: chocolate;
+}

@@ -1,0 +1,87 @@
+<!-- Program understanding the values returned from the selector and also understanding event 
+    bubbling practically -->
+
+<!DOCTYPE html>
+<html>
+  <body>
+    Hello world.
+    <ul>
+      <li>a</li>
+      <li>b</li>
+      <ul>
+        <li>c</li>
+        <li>d</li>
+      </ul>
+      <li>e</li>
+    </ul>
+
+    <div id="hideDiv">
+      Part of div
+      <p id="onclick">Click here</p>
+    </div>
+  </body>
+  <script src="../jquery-3.6.0.js"></script>
+  <style>
+    .colorAqua {
+      color: aqua;
+    }
+
+    .coloryellow {
+      background-color: yellow;
+    }
+
+    .italics {
+      font-style: italic;
+    }
+  </style>
+
+  <script>
+    function myFunction() {
+      console.log($("ul li"));
+      console.log($("ul li").toString());
+      console.log($("ul li")[0]);
+      console.log($("ul li")[0].toString());
+      console.log($("ul li")[0].innerHTML);
+      console.log(typeof $("ul li")[0].innerHTML);
+      console.log($("ul li")[0].innerHTML.toString());
+
+      $("p").each(function (event) {
+        console.log($(this).text());
+      });
+
+      /*Can't use this as no event is happening
+      $("p").each(function (event) {
+        console.log($(event.target).text());
+      });
+      */
+    }
+
+    function onClickHandlerDiv() {
+      $("#hideDiv").on("click", function () {
+        $("#onclick").toggleClass("colorAqua");
+        alert("onClickHandlerDiv called");
+      });
+    }
+
+    function onClickHandlerPara() {
+      $("#onclick").on("click", function () {
+        $("#onclick").toggleClass("coloryellow");
+        alert("onClickHandlerPara called");
+      });
+    }
+
+    function onClickHandlerBody() {
+      $("body").on("click", function () {
+        $("#onclick").toggleClass("italics");
+        alert("onClickHandlerBody called");
+      });
+    }
+
+    $("document").ready(function () {
+      myFunction();
+      onClickHandlerDiv();
+      onClickHandlerBody();
+      onClickHandlerPara();
+    });
+  </script>
+</html>

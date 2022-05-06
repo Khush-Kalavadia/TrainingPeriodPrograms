@@ -1,0 +1,32 @@
+<!-- program to understand event.data -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../jquery-3.6.0.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("p").each(function (i) {
+          $(this).on("click", { x: i, y: i + 2 }, function (event) {
+            alert(
+              "The " +
+                $(event.currentTarget).index() +
+                ". paragraph has data x: " +
+                event.data.x +
+                " data y:" +
+                event.data.y
+            );
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div style="color: red">
+      Click on each p element to return the data passed with the on() method.
+    </div>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <p>This is another paragraph.</p>
+  </body>
+</html>

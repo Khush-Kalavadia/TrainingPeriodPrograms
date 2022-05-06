@@ -20,8 +20,11 @@
     </style>
     <script>
       $("document").ready(function () {
-        $(".begin p").click(function () {
-          $(this).slideUp(); //this does not include "" else it would consider it as name of a tag
+        $(".begin p").click(function (event) {
+          //all three works as binded on the same element
+          // $(this).slideUp(); //this does not include "" else it would consider it as name of a tag
+          $(event.target).slideUp(); //this does not include "" else it would consider it as name of a tag
+          // $(event.currentTarget).slideUp(); //this does not include "" else it would consider it as name of a tag
         });
 
         $(".hover p").hover(
@@ -36,6 +39,7 @@
         $("select").change(function () {
           //change function is used in select
           var selectedOption = $(this).find(":selected").val();
+          // var selectedOption = $(this).val();       //even this works
           alert("You have selected " + selectedOption);
         });
 

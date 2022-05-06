@@ -1,0 +1,27 @@
+<!-- Evaluation Q3 -->
+<!-- Put 5 li. Add a button to insert li. Click on new li to print data-value. -->
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="button" id="myButton" value="Click it" />
+
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+      <div id="addLi"></div>
+    </ul>
+
+    <script src="../jquery-3.6.0.js"></script>
+    <script src="evaluationJs.js"></script>
+    <script>
+      $(document).ready(function () {
+        evaluationMethods.buttonClick();
+        evaluationMethods.liClick();
+      });
+    </script>
+  </body>
+</html>

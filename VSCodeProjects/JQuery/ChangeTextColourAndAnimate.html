@@ -1,4 +1,4 @@
-<!-- Program 2: Changing colour of all p tags and animate -->
+<!-- Program 2: Changing colour of all p tags and animate based on chaining  -->
 
 <!DOCTYPE html>
 <html>
@@ -31,14 +31,14 @@
         //animate at same time
         // $(".box").animate({ height: "+=100px", width: "+=100px" });
 
-        //animate one by one
+        //animate one by one that's chaining
         $(".box").animate({ height: "+=100px" }).animate({ width: "+=100px" });
       }
 
       //shorthand of calling $(document).ready(changeColour) can be used
       //in case we are calling one function -> $(changeColour)
 
-      $("document").ready(function () {
+      $(document).ready(function () {
         changeColour();
         $('input[type="button"]').on("click", buttonClick);
       });

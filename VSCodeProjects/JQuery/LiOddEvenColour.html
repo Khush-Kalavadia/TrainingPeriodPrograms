@@ -1,0 +1,39 @@
+<!-- Evaluation Q2 -->
+<!-- Turn odd li to yellow and even to red using separate buttons -->
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="button" id="odd" value="Odd" />
+    <input type="button" id="even" value="Even" />
+
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+      <li>Item 6</li>
+      <li>Item 7</li>
+      <li>Item 8</li>
+      <li>Item 9</li>
+    </ul>
+
+    <script src="../jquery-3.6.0.js"></script>
+    <script src="evaluationJs.js"></script>
+    <style>
+      .red {
+        background-color: red;
+      }
+
+      .yellow {
+        background-color: yellow;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        evaluationMethods.myFunction();
+      });
+    </script>
+  </body>
+</html>
