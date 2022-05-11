@@ -9,7 +9,7 @@ password varchar(50)
 );
 
 INSERT INTO user(username, password) VALUES ('admin', 'admin'), ('khush', 'khush');
-
+SELECT name, ip_hostname, used_memory_gb/total_memory_gb as measuring_unit FROM ssh_polling INNER JOIN monitor ON id = map_monitor_id WHERE availability_status = 'up' AND (time, map_monitor_id) in (SELECT MAX(time), map_monitor_id FROM ssh_polling GROUP BY map_monitor_id) ORDER BY used_memory_gb/total_memory_gb DESC LIMIT 3;
 SELECT * FROM user;
 
 SELECT * FROM user WHERE username like binary 'admin' AND password like binary 'admin';
@@ -66,10 +66,11 @@ describe discovery;
 select * from discovery;
 select * from credential;
 select * from monitor;	
+select * from ssh_polling order by time desc;
 insert into credential(map_discovery_id, username, password) values(4, 'pavan', "Mind@123"), (5, 'shekhar', "Mind@123");
 update credential set map_discovery_id=6 where id=2;
 delete from discovery where id=37;
-update discovery set provision=1 where id=17;
+update discovery set provision=1 where id=82;
 update discovery set id=1 where name='Khush';
 update credential set map_discovery_id = 44 where id = 12;
 select * from credential;
@@ -82,7 +83,6 @@ select * from discovery;
 update discovery set provision = 1 where id = 27;
 select * from ping_polling where map_monitor_id = 38;
 select availability_status, COUNT(*) as device_count from monitor group by availability_status;
-select * from ssh_polling;
 
 SELECT name, ip_hostname, used_memory_gb FROM ssh_polling INNER JOIN monitor ON id = map_monitor_id WHERE 
 availability_status = 'up' AND (time, map_monitor_id) in (SELECT MAX(time), map_monitor_id FROM ssh_polling 
@@ -94,6 +94,7 @@ SELECT name, ip_hostname, used_memory_gb FROM ssh_polling INNER JOIN monitor ON 
 delete from ping_polling where time between '2022-04-29 18.36.42' and '2022-04-30 10.55.04';
 SELECT time, packet_loss FROM ping_polling WHERE map_monitor_id = 8 ORDER BY time DESC LIMIT 20; 
 select * from monitor;
+select * from ssh_polling where map_monitor_id = 57 order by time desc; 
 delete from monitor where id=10;
 update monitor set availability_status = "down" where id=13;
 INSERT INTO ping_polling(map_monitor_id, time, availability, packet_loss, min_rtt, packet_transmitted, packet_received) VALUES (1, 1, 32, 2, 32, 3);
@@ -130,3 +131,6 @@ used_disk_gb float,
 uptime varchar(40),
 foreign key (map_monitor_id) references monitor(id) on delete cascade
 );
+
+select * from ssh_polling order by time;
+select * from monitor;
